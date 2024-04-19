@@ -4,9 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { IPokemon } from '../../shared/models/pokemon.model';
-import { AppState } from '../../store/app.state';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 import * as PokemonActions from '../../store/pokemon/pokemon.actions';
@@ -37,7 +36,7 @@ export class PokemonsComponent implements OnInit {
   public pokemons$!: Observable<IPokemon[]>;
   public filteredPokemons$!: Observable<IPokemon[]>;
 
-  private store = inject(Store<AppState>);
+  private store = inject(Store);
 
   ngOnInit() {
     this.store.dispatch(PokemonActions.loadPokemons());

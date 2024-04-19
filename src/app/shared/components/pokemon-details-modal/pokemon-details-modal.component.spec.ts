@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
-import { IPokemonDetail } from '../../models/pokemon-detail.model';
 
 import { PokemonDetailsModalComponent } from './pokemon-details-modal.component';
 import * as PokemonDetailSelectors from '../../../store/pokemon-detail/pokemon-detail.selectors';

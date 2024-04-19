@@ -12,8 +12,11 @@ export const initialPokemonDetailState: PokemonDetailState = {
 
 export const pokemonDetailReducer = createReducer(
   initialPokemonDetailState,
-  on(PokemonDetailActions.loadPokemonDetailSuccess, (state, { pokemon }) => ({
-    ...state,
-    pokemon,
-  }))
+  on(
+    PokemonDetailActions.loadPokemonDetailSuccess,
+    (state, { pokemon }): PokemonDetailState => ({
+      ...state,
+      pokemon,
+    })
+  )
 );

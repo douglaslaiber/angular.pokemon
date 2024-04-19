@@ -7,7 +7,6 @@ import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { CommentModalComponent } from '../../../../shared/components/comment-modal/comment-modal.component';
 import { PokemonDetailsModalComponent } from '../../../../shared/components/pokemon-details-modal/pokemon-details-modal.component';
 import { IPokemon } from '../../../../shared/models/pokemon.model';
-import { AppState } from '../../../../store/app.state';
 import * as PokemonActions from '../../../../store/pokemon/pokemon.actions';
 import * as PokemonDetailActions from '../../../../store/pokemon-detail/pokemon-detail.actions';
 import { PokemonCommentComponent } from '../pokemon-comment/pokemon-comment.component';
@@ -25,7 +24,7 @@ export class PokemonCardComponent {
   @Output() favoritePokemon = new EventEmitter<string>();
 
   private modalService = inject(BsModalService);
-  private store = inject(Store<AppState>);
+  private store = inject(Store);
 
   clickFavorite(): void {
     this.favoritePokemon.emit(this.pokemon.name);

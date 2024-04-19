@@ -3,7 +3,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { AppState } from '../../../store/app.state';
 
 import * as PokemonDetailSelectors from '../../../store/pokemon-detail/pokemon-detail.selectors';
 import { IPokemonDetail } from '../../models/pokemon-detail.model';
@@ -19,7 +18,7 @@ export class PokemonDetailsModalComponent implements OnInit {
   public pokemon: IPokemonDetail | null = null;
 
   public modalRef = inject(BsModalRef);
-  private store = inject(Store<AppState>);
+  private store = inject(Store);
 
   ngOnInit() {
     this.store

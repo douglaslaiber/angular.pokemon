@@ -12,10 +12,13 @@ export const initialPokemonState: PokemonState = {
 
 export const pokemonReducer = createReducer(
   initialPokemonState,
-  on(PokemonActions.loadPokemonsSuccess, (state, { pokemons }) => ({
-    ...state,
-    pokemons,
-  })),
+  on(
+    PokemonActions.loadPokemonsSuccess,
+    (state, { pokemons }): PokemonState => ({
+      ...state,
+      pokemons,
+    })
+  ),
   on(PokemonActions.favoritePokemon, (state, { pokemonName }) => {
     const pokemons = state.pokemons.map(pokemon =>
       pokemon.name === pokemonName
