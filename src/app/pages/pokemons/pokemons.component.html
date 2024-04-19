@@ -1,0 +1,28 @@
+<app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+<div class="pokemon-list row">
+  <div
+    class="col-sm-6 col-md-6 col-lg-4 col-xl-3"
+    *ngFor="
+      let pokemon of filteredPokemons$
+        | async
+        | slice: (currentPage - 1) * itemsPerPage : currentPage * itemsPerPage
+    ">
+    <app-pokemon-card
+      [pokemon]="pokemon"
+      (favoritePokemon)="onFavoritePokemon($event)"></app-pokemon-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-12 justify-content-center d-flex mt-4">
+    <pagination
+      *ngIf="filteredPokemons$ | async"
+      [(ngModel)]="currentPage"
+      [totalItems]="(filteredPokemons$ | async)?.length || 0"
+      [itemsPerPage]="itemsPerPage"
+      [maxSize]="8"
+      [previousText]="'Anterior'"
+      [nextText]="'Próximo'"></pagination>
+  </div>
+</div>

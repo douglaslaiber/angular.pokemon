@@ -1,0 +1,33 @@
+<div class="pokemon-container">
+  <div class="pokemon-card card-style">
+    <button class="btn pokemon-card__detail" (click)="openDetailsModal()">
+      <ng-icon [name]="'heroEye'" size="24" color="#011030" class=""></ng-icon>
+    </button>
+
+    <button class="btn pokemon-card__favorite" (click)="clickFavorite()">
+      <ng-icon
+        [name]="pokemon.favorite ? 'heroStarSolid' : 'heroStar'"
+        size="24"
+        color="#011030"
+        class=""></ng-icon>
+    </button>
+
+    <img
+      src="https://projectpokemon.org/images/normal-sprite/{{
+        pokemon.name
+      }}.gif"
+      height="60px"
+      class="pokemon-card__image"
+      alt="{{ pokemon.name }}" />
+
+    <h2 class="pokemon-card__subtitle">N 388</h2>
+    <h3 class="pokemon-card__title">{{ pokemon.name }}</h3>
+
+    <div class="divider"></div>
+
+    <app-pokemon-comment
+      [comment]="pokemon.comment"
+      (addComment)="addComment()"
+      (removeComment)="removeComment()"></app-pokemon-comment>
+  </div>
+</div>

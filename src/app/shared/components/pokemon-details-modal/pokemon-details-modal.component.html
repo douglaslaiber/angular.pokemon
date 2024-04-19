@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <button
+    type="button"
+    class="btn-close close pull-right"
+    aria-label="Close"
+    (click)="modalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <ng-container *ngIf="pokemon">
+    <div class="pokemon">
+      <img
+        [src]="pokemon.sprites?.other?.home?.front_default"
+        [alt]="pokemon.name"
+        class="pokemon__image" />
+
+      <div class="mb-4 flex-fill">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-uppercase">{{ pokemon.name }}</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li
+            class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Altura</h6>
+            </div>
+            <span class="text-muted">{{ pokemon.height }}m</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Peso</h6>
+            </div>
+            <span class="text-muted">{{ pokemon.weight }}kg</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Experiência</h6>
+            </div>
+            <span class="text-muted">{{ pokemon.base_experience }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Novo comentário</h4>
+  <button
+    type="button"
+    class="btn-close close pull-right"
+    aria-label="Close"
+    (click)="modalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nome</label>
+      <input
+        [class.is-invalid]="
+          author?.invalid && (author?.dirty || author?.touched)
+        "
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        formControlName="author" />
+      <div class="invalid-feedback">O campo nome é obrigatório</div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Comentário</label>
+      <textarea
+        [class.is-invalid]="
+          comment?.invalid && (comment?.dirty || comment?.touched)
+        "
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        formControlName="comment"></textarea>
+      <div class="invalid-feedback">O campo comentário é obrigatório</div>
+    </div>
+
+    <button type="submit" class="btn btn-info btn-sm mt-3">Salvar</button>
+  </form>
+</div>

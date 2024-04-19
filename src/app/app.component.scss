@@ -1,0 +1,21 @@
+main {
+  display: block;
+  width: 100%;
+  padding: 24px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.pokemon-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 32px;
+
+  h1 {
+    color: #011030;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,51 @@
+.pokemon-container {
+  position: relative;
+  padding-top: 48px;
+  margin-bottom: 16px;
+}
+
+.card-style {
+  border-radius: 32px;
+  box-shadow: 0 10px 20px -8px #d9dce7;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 16px 32px 16px;
+  background-color: white;
+
+  &__image {
+    position: absolute;
+    top: 12px;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8f9396;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #011030;
+    text-transform: capitalize;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 56px;
+    right: 12px;
+  }
+
+  &__detail {
+    position: absolute;
+    top: 56px;
+    left: 12px;
+  }
+}
+

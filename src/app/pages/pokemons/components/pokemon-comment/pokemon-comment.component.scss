@@ -1,0 +1,23 @@
+:host {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: rgba(1 16 48 / 0.03);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.comment {
+  &__text {
+    font-size: 14px;
+    color: #8f9396;
+    margin: 0;
+  }
+
+  &__author {
+    font-size: 12px;
+    font-weight: 600;
+    color: #011030;
+    opacity: 0.8;
+    padding: 0;
+  }
+}
