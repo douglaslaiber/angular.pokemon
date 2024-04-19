@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IPokemon } from '../../shared/models/pokemon.model';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 import * as PokemonActions from '@store/pokemon/pokemon.actions';
-import * as PokemonSelectors from '@store/pokemon/pokemon.selectors';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FilterPokemonService } from './services/filter-pokemon.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -33,25 +33,19 @@ export class PokemonsComponent implements OnInit {
   public itemsPerPage = 8;
   public currentPage = 1;
 
-  public pokemons$!: Observable<IPokemon[]>;
   public filteredPokemons$!: Observable<IPokemon[]>;
 
   private store = inject(Store);
+  private filterPokemonService = inject(FilterPokemonService);
 
   ngOnInit() {
     this.store.dispatch(PokemonActions.loadPokemons());
-    this.pokemons$ = this.store.select(PokemonSelectors.selectPokemons);
-
     this.onSearch(null);
   }
 
   onSearch(value: string | null) {
     this.currentPage = 1;
-    this.filteredPokemons$ = this.pokemons$.pipe(
-      map(pokemons =>
-        pokemons.filter(pokemon => pokemon.name.includes(value || ''))
-      )
-    );
+    this.filteredPokemons$ = this.filterPokemonService.filter$(value);
   }
 
   onFavoritePokemon(pokemonName: string) {

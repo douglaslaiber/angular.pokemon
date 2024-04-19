@@ -7,8 +7,6 @@ import {
 } from '@ng-icons/heroicons/outline';
 import { heroStarSolid } from '@ng-icons/heroicons/solid';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { of } from 'rxjs';
-import { IPokemon } from '../../shared/models/pokemon.model';
 
 import { PokemonsComponent } from './pokemons.component';
 import * as PokemonActions from '@store/pokemon/pokemon.actions';
@@ -45,10 +43,6 @@ describe('PokemonsComponent', () => {
   });
 
   it('should filter pokemons on onSearch', () => {
-    component.pokemons$ = of([
-      { name: 'pikachu', url: 'url' } as IPokemon,
-      { name: 'bulbasaur', url: 'url' } as IPokemon,
-    ]);
     component.onSearch('pikachu');
     component.filteredPokemons$.subscribe(pokemons => {
       expect(pokemons).toEqual([{ name: 'pikachu', url: 'url' }]);

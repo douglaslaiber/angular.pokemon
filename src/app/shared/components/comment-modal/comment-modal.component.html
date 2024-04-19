@@ -11,26 +11,25 @@
 <div class="modal-body">
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Nome</label>
+      <label for="authorInput">Nome</label>
       <input
         [class.is-invalid]="
           author?.invalid && (author?.dirty || author?.touched)
         "
-        type="email"
         class="form-control"
-        id="exampleFormControlInput1"
+        id="authorInput"
         formControlName="author" />
       <div class="invalid-feedback">O campo nome é obrigatório</div>
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Comentário</label>
+      <label for="commentInput">Comentário</label>
       <textarea
         [class.is-invalid]="
           comment?.invalid && (comment?.dirty || comment?.touched)
         "
         class="form-control"
-        id="exampleFormControlTextarea1"
+        id="commentInput"
         rows="3"
         formControlName="comment"></textarea>
       <div class="invalid-feedback">O campo comentário é obrigatório</div>
