@@ -1,27 +1,54 @@
-# SoftplanPokemon
+<h1 align="center">
+  Angular Pokémon
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+### Para ver o projeto rodando acesse: https://angular-pokemon-six.vercel.app/
 
-## Development server
+<img src="src/assets/preview.png" />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Sobre o projeto
 
-## Code scaffolding
+O projeto criado com o objetivo de listar os principais Pokémons
+O desafio inclui:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Listar Pokémons
+- Pesquisar pelo nome
+- Marcar um Pokémon como favorito
+- Adicionar comentários ao Pokémon
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologias usadas:
 
-## Running unit tests
+- `Angular v17`
+- `RxJs`
+- `NgRx`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Como executar o projeto
 
-## Running end-to-end tests
+### Instalar dependências do projeto
+Executar os comandos abaixo.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+cd angular.pokemon
+npm install
+```
 
-## Further help
+### Executar o projeto
+Executar os comandos abaixo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+npm run start
+```
+
+### Rodar os testes
+Executar os comandos abaixo.
+
+```sh
+npm run test:coverage
+```
+
+### Acessar o projeto
+Acesse o projeto através do endereço:
+```sh
+http://localhost:4200
+```
