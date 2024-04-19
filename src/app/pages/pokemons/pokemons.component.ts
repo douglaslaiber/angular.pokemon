@@ -8,8 +8,8 @@ import { map, Observable } from 'rxjs';
 import { IPokemon } from '../../shared/models/pokemon.model';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
-import * as PokemonActions from '../../store/pokemon/pokemon.actions';
-import * as PokemonSelectors from '../../store/pokemon/pokemon.selectors';
+import * as PokemonActions from '@store/pokemon/pokemon.actions';
+import * as PokemonSelectors from '@store/pokemon/pokemon.selectors';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @Component({

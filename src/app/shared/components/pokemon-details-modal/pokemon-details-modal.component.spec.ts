@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
 
+import * as PokemonDetailSelectors from '@store/pokemon-detail/pokemon-detail.selectors';
 import { PokemonDetailsModalComponent } from './pokemon-details-modal.component';
-import * as PokemonDetailSelectors from '../../../store/pokemon-detail/pokemon-detail.selectors';
 
 describe('PokemonDetailsModalComponent', () => {
   let component: PokemonDetailsModalComponent;

@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 import { IPokemon } from '../../shared/models/pokemon.model';
 
 import { PokemonsComponent } from './pokemons.component';
-import * as PokemonActions from '../../store/pokemon/pokemon.actions';
+import * as PokemonActions from '@store/pokemon/pokemon.actions';
 
 describe('PokemonsComponent', () => {
   let component: PokemonsComponent;

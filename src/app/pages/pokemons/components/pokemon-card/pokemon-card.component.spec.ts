@@ -12,8 +12,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { of } from 'rxjs';
 
 import { PokemonCardComponent } from './pokemon-card.component';
-import * as PokemonActions from '../../../../store/pokemon/pokemon.actions';
-import * as PokemonDetailActions from '../../../../store/pokemon-detail/pokemon-detail.actions';
+import * as PokemonActions from '@store/pokemon/pokemon.actions';
+import * as PokemonDetailActions from '@store/pokemon-detail/pokemon-detail.actions';
 
 describe('PokemonCardComponent', () => {
   let component: PokemonCardComponent;

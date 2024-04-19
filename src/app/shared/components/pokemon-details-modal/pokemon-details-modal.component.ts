@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
-import * as PokemonDetailSelectors from '../../../store/pokemon-detail/pokemon-detail.selectors';
+import * as PokemonDetailSelectors from '@store/pokemon-detail/pokemon-detail.selectors';
 import { IPokemonDetail } from '../../models/pokemon-detail.model';
 
 @Component({

@@ -12,10 +12,10 @@ import { heroStarSolid } from '@ng-icons/heroicons/solid';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
-import { PokemonDetailEffects } from './store/pokemon-detail/pokemon-detail.effects';
-import { pokemonDetailReducer } from './store/pokemon-detail/pokemon-detail.reducer';
-import { PokemonEffects } from './store/pokemon/pokemon.effects';
-import { pokemonReducer } from './store/pokemon/pokemon.reducer';
+import { PokemonDetailEffects } from '@store/pokemon-detail/pokemon-detail.effects';
+import { pokemonDetailReducer } from '@store/pokemon-detail/pokemon-detail.reducer';
+import { PokemonEffects } from '@store/pokemon/pokemon.effects';
+import { pokemonReducer } from '@store/pokemon/pokemon.reducer';
 import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
